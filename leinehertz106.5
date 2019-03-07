@@ -1,0 +1,30 @@
+#!/bin/sh
+# Skript: leinehertz106.5
+#
+# Radio-Stream von Radio Leinertz 106.5 mit MPlayer hoeren
+#
+ 
+PLAYER=$(which mplayer)
+URL="https://www.leinehertz.net/player2/106einhalb_mp3.pls"
+ 
+if [ ! -f "$(echo $PLAYER)" ] ; then
+	echo "MPlayer nicht gefunden."
+        exit 1
+fi
+ 
+ping -n -c 1 www.w3.org >/dev/null
+if [ $? -ne 0 ]; then
+  echo "Kein Internet!"
+  exit 1
+fi
+ 
+echo
+echo "*********************************************"
+echo "* Druecke die Tasten 'Strg + c' zum beenden *"
+echo "* Mit '0' lauter und mit '9' leiser stellen *"
+echo "*********************************************"
+echo 
+ 
+$PLAYER -playlist $URL >/dev/null
+ 
+exit 0
