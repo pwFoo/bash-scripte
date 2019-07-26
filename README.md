@@ -1,3 +1,3 @@
-# Bash-Skripte
+# Bash Scripts
 
-Bash scripts by Christian Imhorst
+by Christian Imhorst
