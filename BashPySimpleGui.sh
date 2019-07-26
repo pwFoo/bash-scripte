@@ -7,13 +7,13 @@
 #     pip install PySimpleGUI
 
 PopUp() {
-    for i in "$@"; do
-        case $i in
-        -T=*|--Text=*)
-        TEXT="${i#*=}"
-        ;;
-        esac
-    done
+for i in "$@"; do
+    case $i in
+    -T=*|--Text=*)
+    TEXT="${i#*=}"
+    ;;
+    esac
+done
 	
 python3 - << EOF
 import PySimpleGUI as sg
@@ -22,16 +22,16 @@ EOF
 }
 
 InputBox() { 
-    for i in "$@"; do
-        case $i in
-        -T=*|--Text=*)
-        TEXT="${i#*=}"
-        ;;
-        -t=*|--title=*)
-        TITLE="${i#*=}"
-        ;;
-        esac
-    done
+for i in "$@"; do
+    case $i in
+    -T=*|--Text=*)
+    TEXT="${i#*=}"
+    ;;
+    -t=*|--title=*)
+    TITLE="${i#*=}"
+    ;;
+    esac
+done
 
 python3 - << EOF
 import PySimpleGUI as sg
