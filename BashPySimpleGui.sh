@@ -8,7 +8,7 @@
 
 PopUp() {
     for i in "$@"; do
-		case $i in
+        case $i in
 		  -T=*|--Text=*)
 		  TEXT="${i#*=}"
 		  ;;
