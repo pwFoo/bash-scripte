@@ -38,14 +38,11 @@ import PySimpleGUI as sg
 layout = [ [sg.Text("$TEXT"), sg.InputText()], [sg.OK()] ]
 window = sg.Window("$TITLE").Layout(layout)
 button, text = window.Read()
-f=open(".cache/$TITLE","w+")
-f.write(text[0])
-f.close()
+print(text[0])
 EOF
 }
 
-InputBox --Text='Say Hello:' --title='Greetings'
-greetings=$(< .cache/$TITLE)
-echo "$greetings"
-PopUp --Text="$greetings"
+greetings=$(InputBox --Text='Say Hello:' --title='Greetings')
+echo "$greetings to the Bash!"
+PopUp --Text="$greetings to all the others!"
 PopUp --Text="That's it. All done."
