@@ -1,7 +1,7 @@
 #!/bin/bash
 # Use PySimpleGUI to add an GUI input box and popup to your bash script.
 # To run this script you need:
-#	* Python3
+#   * Python3
 #   * python3-tk
 #   * PySimpleGUI
 #     pip install PySimpleGUI
