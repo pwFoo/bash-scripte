@@ -7,7 +7,7 @@
 #     pip install PySimpleGUI
 
 PopUp() {
-	for i in "$@"; do
+    for i in "$@"; do
 		case $i in
 		  -T=*|--Text=*)
 		  TEXT="${i#*=}"
