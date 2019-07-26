@@ -9,11 +9,11 @@
 PopUp() {
     for i in "$@"; do
         case $i in
-		  -T=*|--Text=*)
-		  TEXT="${i#*=}"
-		  ;;
-		esac
-	done
+        -T=*|--Text=*)
+        TEXT="${i#*=}"
+        ;;
+        esac
+    done
 	
 python3 - << EOF
 import PySimpleGUI as sg
@@ -22,22 +22,20 @@ EOF
 }
 
 InputBox() { 
-	for i in "$@"; do
-		case $i in
-		  -T=*|--Text=*)
-		  TEXT="${i#*=}"
-		  ;;
-		  -t=*|--title=*)
-		  TITLE="${i#*=}"
-		  ;;
-		esac
-	done
+    for i in "$@"; do
+        case $i in
+        -T=*|--Text=*)
+        TEXT="${i#*=}"
+        ;;
+        -t=*|--title=*)
+        TITLE="${i#*=}"
+        ;;
+        esac
+    done
 
-	python3 - << EOF
+python3 - << EOF
 import PySimpleGUI as sg
-layout = [ [sg.Text("$TEXT"), sg.InputText()],      
-    	   [sg.OK()] ]
-
+layout = [ [sg.Text("$TEXT"), sg.InputText()], [sg.OK()] ]
 window = sg.Window("$TITLE").Layout(layout)
 button, text = window.Read()
 f=open(".cache/$TITLE","w+")
