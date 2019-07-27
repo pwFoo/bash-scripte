@@ -1,4 +1,4 @@
 # Bash Scripts
 
-**BashPySimpleGui.sh** - Use Bash and Python to get a simple GUI with PySimpleGUI 
+**BashPySimpleGui.sh** - Use Bash and Python3 to get a simple GUI with PySimpleGUI 
 in your Bash sripts.
